@@ -1,0 +1,253 @@
+.page-header{
+    position: relative;
+    height: 10%;
+}
+
+.logo-wrapper{
+    margin: 0 auto;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.logo-wrapper-img {
+    max-height: 65px;
+    margin: -10px 0px;
+}
+
+.main-container{
+    position: relative;
+    /* display: flex;
+    align-items: center; */
+}
+
+.add-new-item-container{
+    width: 80%;
+    padding: 15px;
+    z-index: 1050;
+    overflow-x: hidden;
+    background: linear-gradient(#f4f4f4, #fff, #fff, #f4f4f4);
+    box-shadow: 0 0 8px #aaa;
+    margin: 0 auto !important;
+}
+
+.show-items-list{
+    width: 80%;
+    padding: 15px;
+    z-index: 1050;
+    overflow-x: hidden;
+    background: linear-gradient(#f4f4f4, #fff, #fff, #f4f4f4);
+    box-shadow: 0 0 8px #aaa;
+    margin: 15px auto !important;
+}
+
+input[type="text"], input[type="number"], 
+input[type='file']{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin: 5px 5px 5px 10px;
+}
+
+
+textarea {
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin: 5px 5px -5px 10px;
+    resize: vertical;
+}
+
+.components-wrapper{
+    margin-bottom: 15px;
+}
+
+form {
+    padding: 10px;
+}
+
+.error-tooltip {
+    color: red;
+}
+
+input:focus {
+    /* border : 1px solid grey; */
+}
+
+.icon-input-box{
+    padding-left: 30px !important;
+    background-image: url(../images/rupee.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: left center;
+}
+
+
+
+/* input.ng-invalid {
+    background-color: pink;
+    border: 1px solid red;
+} */
+
+/* input.ng-valid {
+    background-color: lightgreen;
+    border: 1px solid darkgreen;
+} */
+
+/* input.ng-untouched {
+    background-color: white;
+    border: 1px solid grey;
+} */
+
+input.ng-touched {
+    background-color: lightgrey;
+    border: 1px solid grey;
+}
+
+input.ng-pristine {
+    /* width: 50%;    */
+}
+
+input.ng-dirty {
+    width: max-content
+}
+
+input[type=submit]{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: left;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+input[type=reset] {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: left;
+}
+
+input[type=reset]:hover {
+    background-color: darkgrey;
+}
+
+input[type=button]{
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+
+.delete-item-btn{
+    color: white;
+    background-color: red;
+    padding: 5px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid slategray;
+
+}
+
+td, th {
+    border: 1px solid slategray;
+    padding: 5px;
+    text-align: center;
+}
+
+.table-rows{
+    cursor: pointer;
+}
+
+.error-msg{
+    background-color: pink;
+    color: lightslategray;
+    padding: 8px 20px;
+    font-size: 20px;
+}
+
+.column{
+    float: left;
+    padding: 10px;
+}
+  
+.item-labels {
+    width: 25%;
+}
+  
+.item-info {
+    width: 75%;
+    overflow-wrap: break-word;
+}
+  
+.info-wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.back-btn{
+    background-color: steelblue;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+*{
+    box-sizing: border-box;
+}
+  
+  /* Create two unequal columns that floats next to each other */
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  
+  .left {
+    width: 25%;
+    background-color:#aaa;
+  }
+  
+  .right {
+    width: 75%;
+    background-color:#bbb;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .item-details-container{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 15px;
+    z-index: 1050;
+    overflow-x: hidden;
+    background: linear-gradient(#f4f4f4, #fff, #fff, #f4f4f4);
+    box-shadow: 0 0 8px #aaa;
+    transform: translate(-50%, -50%);   
+  }

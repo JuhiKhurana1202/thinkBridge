@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="thinkbridgeApp">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ShopBridge</title>
+
+        <!-- <base href="/"> -->
+
+        <link rel="stylesheet" href="styles/app.css" />
+        <link rel="stylesheet" href="styles/angular-http-request-loader.min.css" media="screen" charset="utf-8">
+    </head>
+
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.29/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="assets/angular-http-request-loader.js"></script>
+        <script type="text/javascript" src="assets/ng-file-upload-shim.js"></script>
+        <script type="text/javascript" src="assets/ng-file-upload.js"></script>
+        
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="scripts/dashboardController.js"></script>
+        <script type="text/javascript" src="scripts/itemController.js"></script>
+
+        <!-- <div ng-include="'views/header.html'"></div> -->
+        <div ui-view></div>
+       
+        <div ng-if="loading" class="loading-icon"></div>
+    </body>
+</html>

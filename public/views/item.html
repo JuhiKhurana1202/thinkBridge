@@ -1,0 +1,49 @@
+<body>
+    <div ng-controller="itemController">           
+        <header id="header" class="page-header">
+            <div class="logo-wrapper">
+                <img class="logo-wrapper-img" ng-src="./images/thinkbridge.png"/>
+            </div>
+        </header>
+        
+        <div class="item-details-container">
+            <div class="error-msg" ng-show="showErrorStrip==true">
+                <p>Didnt get Item Id!</p>
+            </div>
+            <div ng-show="!showErrorStrip" >                            
+                <legend> ITEM DETAILS </legend>
+            
+                    <div class="info-wrapper">
+                        <div class="column item-labels">
+                            <p><b>NAME : </b></p>
+                        </div>
+                        <div class="column item-info">
+                            <p>{{item.name}}</p>
+                        </div>
+                    </div>
+                    <div class="info-wrapper">
+                        <hr>
+                        <span class="column item-labels"><b>DESCRIPTION : </b></span>
+                        <span class="column item-info">{{item.description}}</span>
+                    </div>
+                    <div class="info-wrapper">
+                        <hr>
+                        <span class="column item-labels"><b>PRICE : </b></span>
+                        <span class="column item-info">{{item.price}}</span>
+                    </div>
+                    <div class="info-wrapper">    
+                        <hr>
+                        <span class="item-labels"><b>IMAGE : </b></span>
+                        <span class="item-info"><img ng-src="{{item.image}}"/></span>
+                    </div>
+        
+                    
+                
+            </div>
+            <br>
+            <br>
+            <button class="back-btn" ng-click="rediredtToHomePage()">BACK TO HOME PAGE</button>
+        
+        </div>
+    </div>
+</body>
