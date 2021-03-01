@@ -17,7 +17,7 @@
                                 <p><b>NAME : </b></p>
                             </div>
                             <div class="column item-info">
-                                <input name="itemName" type="text" ng-model="item.name" placeholder="maximum 100 characters" ng-maxlength="100" ng-minlength="4" required/>
+                                <input name="itemName" type="text" ng-model="item.name" placeholder="(maximum 100 characters)" ng-maxlength="100" ng-minlength="4" required/>
                             </div>
                             <br>
                             <span class="error-tooltip" ng-show="addNewItemForm.itemName.$touched && addNewItemForm.itemName.$invalid">Item name is required.</span>
@@ -28,7 +28,7 @@
                                 <p><b>Description : </b></p>
                             </div>
                             <div class="column item-info">
-                                <textarea name="itemDescription" ng-model="item.description" placeholder="maximum 1000 characters" ng-maxlength="1000" ng-minlength="100" required></textarea>
+                                <textarea name="itemDescription" ng-model="item.description" placeholder="(maximum 1000 characters)" ng-maxlength="1000" ng-minlength="100" required></textarea>
                             </div>
                             <br>
                             <span class="error-tooltip" ng-show="addNewItemForm.itemDescription.$touched && addNewItemForm.itemDescription.$invalid">Item description is required.</span>
@@ -50,7 +50,7 @@
                                 <p><b>Select image : </b></p>
                             </div>
                             <div class="column item-info">
-                                <input type="file" ngf-select ng-model="item.image" name="image" ngf-pattern="'image/*'"
+                                <input type="file" ngf-select ng-model="item.image" name="file" ngf-pattern="'image/*'"
                             ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
                             ngf-resize="{width: 100, height: 100}" placeholder="Upload Image" />
                             <span ng-if="item.image!=''">Image thumbnail: <img ngf-thumbnail="item.image"></span> 
@@ -80,8 +80,7 @@
                         <!-- <td>{{item.description}}</td> -->
                         <td>{{item.price}}</td>
                         <td> 
-                            <!-- <img ng-src="{{getImageSrcUrl(item.image)}}" /> -->
-                            <!-- <img data-ng-src="data:image/jpeg;base64,{{item.image}}" /></td> -->
+                            <img ng-src="{{item.image}}" />
                         <td><button class="delete-item-btn" ng-click="$event.stopImmediatePropagation(); deleteItem(item._id);">Delete</button></td>
                     </tbody>
                 </table>

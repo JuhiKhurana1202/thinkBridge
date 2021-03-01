@@ -27,45 +27,44 @@ var storage = multer.diskStorage({
     filename: function(req, file, cb) {
         console.log(req);
         console.log(file);
-        cb(null, file.fieldname + '-' + Date.now())
+        cb(null, file.originalname);
     }
 })
 
 var upload = multer({ storage: storage })
 
-
+const { static } = require('express');
+app.use('/uploads/', static('uploads/'));
 
 
 app.post('/product/create', upload.single('image'), function(req, res, next) {
-
-    console.log('******************************************* ' ,req.body);
-    console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& ', req.file);
-    const file = req.file
-    if (file) {
-        var img = fs.readFileSync(req.file.path);
-        var encode_image = img.toString('base64');
-        const product = new Products({
-            name: req.body.name,
-            description: req.body.description,
-            price: parseInt(req.body.price),
-            image: new Buffer(encode_image, 'base64'),
-        });
-        product.save(function(err) {
-            if (err) return handleError(err);
-            console.log("created")
+    console.log(req.file.path);
+    let fileUrl = "";
+    if (req.file) {
+        fileUrl = req.protocol + "://" + req.host + ':3000/' + req.file.path;
+        console.log(fileUrl);
+    }
+    const product = new Products({
+        name: req.body.name,
+        description: req.body.description,
+        price: parseInt(req.body.price),
+        image: fileUrl
+    });
+    product.save(function(err) {
+        if (err) {
+            res.send({
+                "isError": true,
+                "msg": "please check request body",
+                "data": {}
+            })
+        } else {
             res.send({
                 "isError": false,
                 "msg": "Product created",
                 "data": {}
             })
-        });
-    } else {
-        res.send({
-            "isError": true,
-            "msg": "Please attatch file",
-            "data": {}
-        })
-    }
+        }
+    });
 });
 
 app.get('/products/list', (req, res) => {
@@ -88,7 +87,6 @@ app.get('/products/list', (req, res) => {
     })
 
 });
-
 app.get('/products/get', (req, res) => {
     Products.findOne({ _id: ObjectId(req.query.id) }, (err, result) => {
 
@@ -121,7 +119,7 @@ app.post('/products/delete', (req, res) => {
         } else {
             res.send({
                 "isError": true,
-                "msg": "Please check product Id",
+                "msg": "Please check product id",
                 "data": {}
             })
         }
