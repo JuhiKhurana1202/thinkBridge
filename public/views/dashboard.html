@@ -13,10 +13,10 @@
                     <form name="addNewItemForm" ng-submit="addNewProduct(addNewItemForm)">
                         
                         <div class="info-wrapper">
-                            <div class="column item-labels">
+                            <div class="left-columns item-labels">
                                 <p><b>NAME : </b></p>
                             </div>
-                            <div class="column item-info">
+                            <div class="left-columns item-info">
                                 <input name="itemName" type="text" ng-model="item.name" placeholder="(maximum 100 characters)" ng-maxlength="100" ng-minlength="4" required/>
                             </div>
                             <br>
@@ -24,10 +24,10 @@
                         </div>
 
                         <div class="info-wrapper">
-                            <div class="column item-labels">
+                            <div class="left-columns item-labels">
                                 <p><b>Description : </b></p>
                             </div>
-                            <div class="column item-info">
+                            <div class="left-columns item-info">
                                 <textarea name="itemDescription" ng-model="item.description" placeholder="(maximum 1000 characters)" ng-maxlength="1000" ng-minlength="100" required></textarea>
                             </div>
                             <br>
@@ -35,10 +35,10 @@
                         </div>
 
                         <div class="info-wrapper">
-                            <div class="column item-labels">
+                            <div class="left-columns item-labels">
                                 <p><b>Price : </b></p>
                             </div>
-                            <div class="column item-info">
+                            <div class="left-columns item-info">
                                 <input name="itemPrice" type="number" ng-model="item.price" class="icon-input-box" />
                             </div>
                             <br>
@@ -46,10 +46,10 @@
                         </div>
     
                         <div class="info-wrapper">
-                            <div class="column item-labels">
+                            <div class="left-columns item-labels">
                                 <p><b>Select image : </b></p>
                             </div>
-                            <div class="column item-info">
+                            <div class="left-columns item-info">
                                 <input type="file" ngf-select ng-model="item.image" name="file" ngf-pattern="'image/*'"
                             ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
                             ngf-resize="{width: 100, height: 100}" placeholder="Upload Image" />

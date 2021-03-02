@@ -187,7 +187,11 @@ td, th {
     float: left;
     padding: 10px;
 }
-  
+
+.left-columns{
+    float: left;
+}
+
 .item-labels {
     width: 25%;
 }
@@ -216,30 +220,7 @@ td, th {
     box-sizing: border-box;
 }
   
-  /* Create two unequal columns that floats next to each other */
-  .column {
-    float: left;
-    padding: 10px;
-  }
-  
-  .left {
-    width: 25%;
-    background-color:#aaa;
-  }
-  
-  .right {
-    width: 75%;
-    background-color:#bbb;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  .item-details-container{
+.item-details-container{
     width: 80%;
     position: absolute;
     top: 50%;
@@ -250,4 +231,4 @@ td, th {
     background: linear-gradient(#f4f4f4, #fff, #fff, #f4f4f4);
     box-shadow: 0 0 8px #aaa;
     transform: translate(-50%, -50%);   
-  }
+}
